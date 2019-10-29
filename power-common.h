@@ -61,7 +61,7 @@ int get_number_of_profiles();
 #define CHECK_HANDLE(x) ((x) > 0)
 #define UNUSED(x) UNUSED_##x __attribute__((__unused__))
 
-// Custom Lineage hints
+// Custom MoKee hints
 const static power_hint_t POWER_HINT_SET_PROFILE = (power_hint_t)0x00000111;
 
 #ifdef __cplusplus
