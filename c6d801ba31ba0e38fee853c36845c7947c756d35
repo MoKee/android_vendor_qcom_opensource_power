@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "159d39c8_0a5713fc",
+        "filename": "power-6150.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1975
+      },
+      "writtenOn": "2020-02-11T11:37:47Z",
+      "side": 1,
+      "message": "你确定不支持吗？\n我不确定，我没有6150的手册。\n按道理perf的版本一样，应该都差不多吧。\n你确定不支持，我可以考虑拿掉",
+      "parentUuid": "8fa17e5b_fecd201b",
+      "revId": "c6d801ba31ba0e38fee853c36845c7947c756d35",
+      "serverId": "83d63960-fecf-4fd1-a7f6-e01518638a62",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3f144e4f_1aeb6b6b",
         "filename": "power-6150.c",
         "patchSetId": 3
