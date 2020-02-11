@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b3e17a98_3426bebe",
+        "filename": "power-6150.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2020-02-11T06:06:19Z",
+      "side": 1,
+      "message": "这个函数没用，咱们又不是interactive",
+      "revId": "c6d801ba31ba0e38fee853c36845c7947c756d35",
+      "serverId": "83d63960-fecf-4fd1-a7f6-e01518638a62",
+      "unresolved": true
+    }
+  ]
+}
