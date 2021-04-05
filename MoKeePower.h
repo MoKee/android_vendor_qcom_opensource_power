@@ -14,42 +14,24 @@
  * limitations under the License.
  */
 
-#include "LineagePower.h"
-#include "power-common.h"
+#pragma once
 
-using ::ndk::ScopedAStatus;
+#include <aidl/vendor/mokee/power/BnPower.h>
 
 namespace aidl {
 namespace vendor {
-namespace lineage {
+namespace mokee {
 namespace power {
 namespace impl {
 
-ScopedAStatus Power::getFeature(Feature feature, int* _aidl_return) {
-    switch (feature) {
-        case Feature::SUPPORTED_PROFILES:
-            *_aidl_return = get_number_of_profiles();
-            break;
-        default:
-            *_aidl_return = -1;
-            break;
-    }
-    return ScopedAStatus::ok();
-}
-
-ScopedAStatus Power::setBoost(Boost type, int durationMs) {
-    switch (type) {
-        case Boost::SET_PROFILE:
-            set_power_profile(durationMs);
-            break;
-        default:
-            break;
-    }
-    return ScopedAStatus::ok();
-}
+class Power : public BnPower {
+  public:
+    ndk::ScopedAStatus getFeature(Feature feature, int* _aidl_return) override;
+    ndk::ScopedAStatus setBoost(Boost type, int durationMs) override;
+};
 
 }  // namespace impl
 }  // namespace power
-}  // namespace lineage
+}  // namespace mokee
 }  // namespace vendor
 }  // namespace aidl

@@ -28,7 +28,7 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "LineagePower.h"
+#include "MoKeePower.h"
 #include "Power.h"
 
 #include <android-base/logging.h>
@@ -36,7 +36,7 @@
 #include <android/binder_process.h>
 
 using aidl::android::hardware::power::impl::Power;
-using LineagePower = aidl::vendor::lineage::power::impl::Power;
+using MoKeePower = aidl::vendor::mokee::power::impl::Power;
 
 int main() {
     ABinderProcess_setThreadPoolMaxThreadCount(0);
@@ -52,12 +52,12 @@ int main() {
         }
     }
 
-    std::shared_ptr<LineagePower> lineage_vib = ndk::SharedRefBase::make<LineagePower>();
-    const std::string lineage_instance = std::string() + LineagePower::descriptor + "/default";
-    LOG(INFO) << "Instance " << lineage_instance;
-    if (lineage_vib) {
+    std::shared_ptr<MoKeePower> mokee_vib = ndk::SharedRefBase::make<MoKeePower>();
+    const std::string mokee_instance = std::string() + MoKeePower::descriptor + "/default";
+    LOG(INFO) << "Instance " << mokee_instance;
+    if (mokee_vib) {
         binder_status_t status =
-                AServiceManager_addService(lineage_vib->asBinder().get(), lineage_instance.c_str());
+                AServiceManager_addService(mokee_vib->asBinder().get(), mokee_instance.c_str());
         LOG(INFO) << "Status " << status;
         if (status != STATUS_OK) {
             LOG(ERROR) << "Could not register" << instance;
